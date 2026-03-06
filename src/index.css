@@ -6,24 +6,49 @@
 
 :root {
   font-family: 'Outfit', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
   color: #102130;
   background: #f3f6f8;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+}
+
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;
   background:
     radial-gradient(circle at 10% 10%, #d3eefb 0, transparent 45%),
     radial-gradient(circle at 90% 20%, #ffe0bf 0, transparent 40%),
     linear-gradient(170deg, #f7fafc 0%, #eef3f5 100%);
+  touch-action: manipulation;
 }
 
 #root {
-  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }

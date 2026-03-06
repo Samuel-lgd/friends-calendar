@@ -5,4 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   base: '/friends-calendar/',
   plugins: [react()],
+  server: {
+    host: true,
+  },
 })
